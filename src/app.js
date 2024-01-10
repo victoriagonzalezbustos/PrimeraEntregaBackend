@@ -5,56 +5,28 @@ const express = require("express")
 
 const app = express()
 
+const productsRouter = require("./routes/products.routers.js")
+const cartsRouter = require("./routes/carts.router.js")
+
 //creo ruta raiz
 
 app.get("/", (req, res) => {
     res.send("server con express")
 })
 
+//Middleware
 
+app.use(express.urlencoded({
+    extended: true
+}))
 
+app.use(express.json())
 
-// desafio 3
+//rutas
 
-const ProductManager = require("./product_manager.js")
+app.use("/api", productsRouter)
+app.use("/api", cartsRouter)
 
-const manager = new ProductManager("./src/products.json")
-
-//limite
-
-app.get("/products", async (req, res) => {
-
-    let limit = parseInt(req.query.limit);
-
-    let productos = await  manager.leerArchivo()
-    
-    if(limit){
-        productosAcotados = productos.slice(0,limit)
-        res.send(productosAcotados)
-    }else{
-        res.send(productos)
-    }
-    
-})
-
-//filtro por id
-
-app.get("/products/:id", async (req, res) =>{
-
-    let id = parseInt(  req.params.id)
-    let productos = await  manager.leerArchivo()
-
-    productoBuscado = productos.find(item => item.id == id)
-
-    if (id){
-        res.send(productoBuscado)
-    }else{
-        res.send("nada que mostrar")
-    }
-
-
-
-})
 
 // pongo a escuchar el servidor
 
