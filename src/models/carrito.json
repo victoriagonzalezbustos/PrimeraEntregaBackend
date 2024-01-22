@@ -1,47 +1,127 @@
 [
-    {
-      "id": 1,
-      "titulo": "mochila",
-      "descripcion": "mochila para colegio",
-      "precio": 1000,
-      "img": "sin img",
-      "codigo": "1234",
-      "stock": 45
-    },
-    {
-      "id": 2,
-      "titulo": "cartuchera",
-      "descripcion": "cartuchera 3 pisos",
-      "precio": 500,
-      "img": "sin img",
-      "codigo": "1235",
-      "stock": 80
-    },
-    {
-      "id": 3,
-      "titulo": "lapicera",
-      "descripcion": "azul",
-      "precio": 50,
-      "img": "sin img",
-      "codigo": "1236",
-      "stock": 100
-    },
-    {
-      "id": 4,
-      "titulo": "lapices",
-      "descripcion": "lapices de colores",
-      "precio": 5000,
-      "img": "sin img",
-      "codigo": "1237",
-      "stock": 90
-    },
-    {
-      "id": 5,
-      "titulo": "marcadores",
-      "descripcion": "caja de 24",
-      "precio": 900,
-      "img": "sin img",
-      "codigo": "1238",
-      "stock": 40
-    }
-  ]
+  {
+    "id": 1,
+    "arrayProductos": [
+      {
+        "id": 1,
+        "cantidad": 3
+      },
+      {
+        "id": 2,
+        "cantidad": 1
+      },
+      {
+        "id": 3,
+        "cantidad": 5
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "arrayProductos": []
+  },
+  {
+    "id": 3,
+    "arrayProductos": []
+  },
+  {
+    "id": 4,
+    "arrayProductos": []
+  },
+  {
+    "id": 5,
+    "arrayProductos": []
+  },
+  {
+    "id": 6,
+    "arrayProductos": []
+  },
+  {
+    "id": 7,
+    "arrayProductos": []
+  },
+  {
+    "id": 8,
+    "arrayProductos": []
+  },
+  {
+    "id": 9,
+    "arrayProductos": []
+  },
+  {
+    "id": 10,
+    "arrayProductos": []
+  },
+  {
+    "id": 11,
+    "arrayProductos": []
+  },
+  {
+    "id": 12,
+    "arrayProductos": []
+  },
+  {
+    "id": 13,
+    "arrayProductos": []
+  },
+  {
+    "id": 14,
+    "arrayProductos": []
+  },
+  {
+    "id": 15,
+    "arrayProductos": []
+  },
+  {
+    "id": 16,
+    "arrayProductos": []
+  },
+  {
+    "id": 17,
+    "arrayProductos": []
+  },
+  {
+    "id": 18,
+    "arrayProductos": []
+  },
+  {
+    "id": 19,
+    "arrayProductos": []
+  },
+  {
+    "id": 20,
+    "arrayProductos": []
+  },
+  {
+    "id": 21,
+    "arrayProductos": []
+  },
+  {
+    "id": 22,
+    "arrayProductos": []
+  },
+  {
+    "id": 23,
+    "arrayProductos": []
+  },
+  {
+    "id": 24,
+    "arrayProductos": []
+  },
+  {
+    "id": 25,
+    "arrayProductos": []
+  },
+  {
+    "id": 26,
+    "arrayProductos": []
+  },
+  {
+    "id": 27,
+    "arrayProductos": []
+  },
+  {
+    "id": 28,
+    "arrayProductos": []
+  }
+]

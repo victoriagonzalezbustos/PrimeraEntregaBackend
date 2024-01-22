@@ -6,7 +6,7 @@ const fs = require("fs").promises
 
 class ProductManager{
 
-    static ultimoid = 0
+    
 
     constructor(path){
         this.products =[]
@@ -14,6 +14,13 @@ class ProductManager{
     }
 
     async addProduct(nuevoObjeto){
+        
+        const productos = await fs.readFile(this.path, "utf-8")
+        const arrayProductos = JSON.parse(productos)
+        var ultimoid = arrayProductos.length
+        
+       
+        
         let {titulo, descripcion, precio, img, codigo, stock} = nuevoObjeto
 
         if(!titulo || !descripcion || !precio || !img ||!codigo || !stock  ){
@@ -27,7 +34,7 @@ class ProductManager{
         }
 
         const newProduct = {
-            id : ++ProductManager.ultimoid,
+            id : ++ultimoid,
             titulo,
             descripcion,
             precio,
@@ -37,9 +44,10 @@ class ProductManager{
 
         }
 
-        this.products.push(newProduct)
 
-        await this.guardarArchivo(this.products)
+        arrayProductos.push(newProduct)
+
+        await this.guardarArchivo(arrayProductos)
 
     }
 
@@ -75,8 +83,12 @@ class ProductManager{
         }
     }
 
-    deleteProducts (){
-        this.products = []
+    async deleteProducts(id){
+        
+        const arrayProductos = await this.leerArchivo()
+        const productIndex = arrayProductos.findIndex(producto => producto.id == id)
+        arrayProductos.splice(productIndex, 1)
+        await this.guardarArchivo(arrayProductos)
     }
 
     async leerArchivo(){
@@ -137,6 +149,7 @@ class ProductManager{
 
 
 }
+
 
 
 module.exports = ProductManager
