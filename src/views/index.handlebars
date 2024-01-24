@@ -1,0 +1,12 @@
+<h1>Catalogo</h1>
+<div class="contenedorProductos">   
+    {{#each productos}}
+    <div class="producto">
+        <p>{{this.titulo}}</p>
+        <p>{{this.descripcion}}</p>
+        <p>{{this.precio}}</p>
+    </div>
+    {{/each}}
+</div>
+
+<script src="../public/js/main.js"></script>
