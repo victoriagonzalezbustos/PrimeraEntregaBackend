@@ -6,7 +6,7 @@ socket.on("products", (data)=>{
 
 const renderProductos= (products) =>{
     const contenedorProductos = document.getElementById("contenedorProductos")
-    //contenedorProductos.innerHTML = ""
+    contenedorProductos.innerHTML = ""
 
     products.forEach(element => {
 
@@ -14,16 +14,16 @@ const renderProductos= (products) =>{
         card.classList.add("producto")
 
         card.innerHTML = `
-        <p> Id ${element.id}</p>
-        <p> Id ${element.titulo}</p>
-        <p> Id ${element.descripcion}</p>
+        <p> ${element.id}</p>
+        <p> ${element.titulo}</p>
+        <p> ${element.descripcion}</p>
         <button> Eliminar Producto </button> 
         `
 
         contenedorProductos.appendChild(card)
 
         card.querySelector("button").addEventListener("click", ()=>{
-            eliminarProducto(item.id)
+            eliminarProducto(element.id)
         })
         
     });
@@ -39,15 +39,16 @@ document.getElementById("BotonEnviar").addEventListener("click", ()=>{
 
 const agregarProducto =  ()=>{
     const producto = {
-        titulo : document.getElementById("titulo"),
-        descripcion : document.getElementById("descripcion"),
-        precio : document.getElementById("precio"),
-        imagen : document.getElementById("imagen"),
-        codigo : document.getElementById("codigo"),
-        stock : document.getElementById("stock")
+        titulo: document.getElementById("titulo").value,
+        descripcion : document.getElementById("descripcion").value,
+        precio : document.getElementById("precio").value,
+        img : document.getElementById("imagen").value,
+        codigo : document.getElementById("codigo").value,
+        stock : document.getElementById("stock").value
 
 
     }
-
+    console.log(producto)
     socket.emit("agregarProducto", producto)
 }
+

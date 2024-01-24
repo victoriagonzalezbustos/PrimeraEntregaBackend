@@ -51,7 +51,7 @@ io.on("connection", async(socket)=> {
     socket.emit("products", await productManager.leerArchivo())
 
     socket.on("eliminarProducto", async(id)=>{
-        await productManager.deleteProducts()
+        await productManager.deleteProducts(id)
         io.socket.emit("products", await productManager.leerArchivo())
     })
 
@@ -59,4 +59,4 @@ io.on("connection", async(socket)=> {
         await productManager.addProduct(producto)
         io.socket.emit("products", await productManager.leerArchivo())
     })
-})
+})  
