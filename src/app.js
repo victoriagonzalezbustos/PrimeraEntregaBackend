@@ -2,6 +2,7 @@
 const PUERTO = 8080
 const express = require("express")
 const app = express()
+require("./database")
 
 const exphdbs = require("express-handlebars")
 app.engine("handlebars", exphdbs.engine())
@@ -11,8 +12,10 @@ app.set("views", "./src/views")
 const productsRouter = require("./routes/products.routers.js")
 const cartsRouter = require("./routes/carts.router.js")
 const viewsRouter = require("./routes/views.router.js")
+const clientesRouter = require("./routes/clientes.router.js")
 
-const ProductManager = require("./controllers/product_manager.js")
+
+const ProductManager = require("./dao/fs/product_manager.js")
 const productManager = new ProductManager("./src/models/products.json")
 
 
@@ -31,6 +34,7 @@ app.use(express.static("./src/public"))
 app.use("/api", productsRouter)
 app.use("/api", cartsRouter)
 app.use("/", viewsRouter)
+app.use("/clientes", clientesRouter)
 
 
 // pongo a escuchar el servidor

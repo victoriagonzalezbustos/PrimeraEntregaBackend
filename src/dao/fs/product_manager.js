@@ -4,7 +4,7 @@ const { json } = require("stream/consumers")
 const fs = require("fs").promises
 
 
-class ProductManager{
+class ProductManagerviejo{
 
     
 
@@ -152,4 +152,4 @@ class ProductManager{
 
 
 
-module.exports = ProductManager
+module.exports = ProductManagerviejo

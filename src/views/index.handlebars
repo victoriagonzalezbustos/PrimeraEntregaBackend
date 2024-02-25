@@ -1,12 +1,20 @@
-<h1>Catalogo</h1>
+<h1>Carrito</h1>
 <div class="contenedorProductos">   
-    {{#each productos}}
+    {{#each products}}
     <div class="producto">
-        <p>{{this.titulo}}</p>
-        <p>{{this.descripcion}}</p>
-        <p>{{this.precio}}</p>
+        <p>{{this.title}}</p>
+        <p>{{this.description}}</p>
+        <p>{{this.price}}</p>
+        <a href="/carrito/{{_id}}">agregar al carrito</a>
     </div>
     {{/each}}
 </div>
+{{#if hasNextPage}}
+    <a href="/?page={{nextPage}}&query={{query}}&limit={{limit}}&sorted={{sorted}}">Siguiente</a>
+{{/if}}
+{{#if hasPrevPage}}
+    <a href="/?page={{prevPage}}&query={{query}}&limit={{limit}}&sorted={{sorted}}">Anterior</a>
+{{/if}}
+
 
 <script src="../public/js/main.js"></script>

@@ -1,0 +1,14 @@
+<h1>Carrito</h1>
+<div class="contenedorProductos">   
+    {{#each products}}
+    <div class="producto">
+        <p>{{this.product}}</p>
+        <p>{{this.quantity}}</p>
+        <a href="/carrito/delete/{{product}}">eliminar</a>
+        
+    </div>
+    {{/each}}   
+    <a href="/carrito/vaciar/carrito">Vaciar Carrito</a>
+</div>
+
+<script src="../public/js/main.js"></script>
